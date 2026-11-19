@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="飞行练习器">
+<title>飞行练习器</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%230d1219'/%3E%3Ctext x='32' y='44' font-size='30' text-anchor='middle' fill='%235fd8e8' font-family='monospace'%3E%E2%9C%88%3C/text%3E%3C/svg%3E">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="stylesheet" href="style.css?v=1">
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="kicker">OFFLINE FLIGHT TRAINER</div>
+    <h1>飞行练习器</h1>
+    <p class="sub">两个模拟器 · 安装到主屏幕后可断网使用</p>
+  </header>
+  <main class="cards">
+    <a class="card cyan" href="b737/index.html">
+      <div class="logo">737</div>
+      <div class="info">
+        <div class="title">Boeing 737-800</div>
+        <div class="desc">FMC / CDU 练习器 · 含互动教程</div>
+      </div>
+      <div class="arrow">›</div>
+    </a>
+    <a class="card green" href="atr/index.html">
+      <div class="logo">ATR</div>
+      <div class="info">
+        <div class="title">ATR 72-600</div>
+        <div class="desc">FMS 220 MCDU 练习器 · 含互动教程</div>
+      </div>
+      <div class="arrow">›</div>
+    </a>
+  </main>
+  <footer>
+    <div id="status">首次使用：用 Safari 打开本页 → 分享 → 添加到主屏幕</div>
+  </footer>
+</div>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('./sw.js').catch(function(){});
+  }
+  window.addEventListener('online', function(){ document.getElementById('status').textContent = '已联网 · 资源将自动缓存'; });
+  window.addEventListener('offline', function(){ document.getElementById('status').textContent = '离线模式 · 可正常使用'; });
+  if (!navigator.onLine) document.getElementById('status').textContent = '离线模式 · 可正常使用';
+</script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+{
+  "name": "ATR 72-600 MCDU 练习器",
+  "short_name": "ATR MCDU",
+  "description": "手机可用的 ATR 72-600 / FMS 220 MCDU 模拟器与互动教程",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#07090c",
+  "theme_color": "#0b1017",
+  "lang": "zh-CN"
+}

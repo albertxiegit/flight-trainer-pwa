@@ -1,0 +1,32 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; }
+body {
+  font-family: -apple-system, "Segoe UI", "Microsoft YaHei", sans-serif;
+  background: radial-gradient(circle at 50% 0%, #16202c, #080b10 70%);
+  color: #dbe6f2; display: flex; justify-content: center;
+  -webkit-tap-highlight-color: transparent;
+}
+.wrap { width: 100%; max-width: 520px; padding: 40px 20px 24px; display: flex; flex-direction: column; min-height: 100dvh; }
+header { margin-bottom: 28px; }
+.kicker { font-size: 11px; letter-spacing: 2px; color: #5fd8e8; }
+h1 { font-size: 28px; margin: 6px 0 4px; }
+.sub { font-size: 13px; color: #8493a4; }
+.cards { display: flex; flex-direction: column; gap: 14px; flex: 1; }
+.card {
+  display: flex; align-items: center; gap: 16px; padding: 18px;
+  background: linear-gradient(135deg, #131c27, #0e141d);
+  border: 1px solid #2a3644; border-radius: 16px; text-decoration: none; color: inherit;
+  box-shadow: 0 6px 18px rgba(0,0,0,.35);
+}
+.card:active { transform: translateY(1px); }
+.card .logo {
+  width: 62px; height: 62px; border-radius: 14px; display: flex; align-items: center; justify-content: center;
+  font-weight: 800; font-size: 22px; flex: 0 0 auto;
+}
+.card.cyan .logo { background: #0d2a33; color: #5fd8e8; border: 1px solid #1c5a68; }
+.card.green .logo { background: #102a1f; color: #7dffb0; border: 1px solid #2a6b48; }
+.card .info { flex: 1; min-width: 0; }
+.card .title { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
+.card .desc { font-size: 12px; color: #8493a4; }
+.card .arrow { font-size: 30px; color: #5f7185; }
+footer { margin-top: 24px; font-size: 12px; color: #6d7d8f; text-align: center; line-height: 1.6; }

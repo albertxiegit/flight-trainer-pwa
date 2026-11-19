@@ -1,0 +1,12 @@
+{
+  "name": "Boeing 737-800 CDU 练习器",
+  "short_name": "737 CDU",
+  "description": "手机可用的 Boeing 737-800 FMC/CDU 模拟器与互动教程",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#080b10",
+  "theme_color": "#0d1219",
+  "lang": "zh-CN"
+}

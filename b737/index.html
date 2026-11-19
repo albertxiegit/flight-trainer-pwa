@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Boeing 737-800 CDU 练习器</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%23000'/%3E%3Ctext x='32' y='44' font-size='30' text-anchor='middle' fill='%235fd8e8' font-family='monospace'%3E7%3C/text%3E%3C/svg%3E">
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="styles.css?v=13">
+</head>
+<body>
+<div class="app">
+  <header class="topbar">
+    <button class="top-btn" id="helpBtn" type="button">? 教程</button>
+    <button class="top-btn" id="glossaryBtn" type="button">术语</button>
+    <div class="top-title">BOEING 737-800 · FMC CDU</div>
+    <button class="top-btn" id="resetBtn" type="button">重置</button>
+  </header>
+
+  <main class="stage">
+    <section class="cdu" id="cdu" aria-label="Boeing 737 CDU">
+      <!-- 面板贴图：所有按键区域为绝对定位透明热区 -->
+      <div class="panel" id="panel">
+        <!-- 屏幕动态覆盖层（盖住贴图上的静态文字） -->
+        <div class="screen-overlay" id="screenOverlay">
+          <div class="screen-inner">
+            <div class="screen-title" id="screenTitle">ACT LEGS</div>
+            <div class="rows" id="rows"></div>
+            <div class="scratch-row"><span class="scratchpad" id="scratchpad"></span></div>
+          </div>
+        </div>
+
+        <!-- LSK 热区（左右各6） -->
+        <div class="zones" id="lskLeft"></div>
+        <div class="zones" id="lskRight"></div>
+
+        <!-- 功能键热区 -->
+        <div class="zones" id="funcKeys"></div>
+        <!-- EXEC 热区（含灯） -->
+        <button class="hot exec-hot" id="execKey" type="button" aria-label="EXEC"><span class="led" id="execLed"></span></button>
+        <!-- BRT 旋钮（装饰，无交互） -->
+
+        <!-- 数字圆键热区 -->
+        <div class="zones" id="numPad"></div>
+        <!-- 字母方键热区 -->
+        <div class="zones" id="letterPad"></div>
+      </div>
+    </section>
+
+    <aside class="tutorial" id="tutorial">
+      <div class="tutorial-head">
+        <div>
+          <div class="tutorial-kicker">互动教程</div>
+          <div class="tutorial-title" id="tutorialTitle">欢迎</div>
+        </div>
+        <button class="icon-btn" id="closeTutorial" type="button" aria-label="关闭教程">×</button>
+      </div>
+      <div class="mode-tabs">
+        <button class="mode-tab active" id="tabTutorial" type="button">教程</button>
+        <button class="mode-tab" id="tabGlossary" type="button">缩写 / 术语</button>
+      </div>
+
+      <div class="mode-view" id="viewTutorial">
+        <div class="chapter-label">章节导航 · 点击直接跳转</div>
+        <div class="chapter-nav" id="chapterNav"></div>
+        <div class="tutorial-text" id="tutorialText"></div>
+        <div class="page-note" id="pageNote"></div>
+        <div class="progress" id="progress"></div>
+        <div class="tutorial-actions">
+          <button class="t-btn ghost" id="prevStep" type="button">上一步</button>
+          <button class="t-btn ghost" id="skipStep" type="button">跳过</button>
+          <button class="t-btn primary" id="nextStep" type="button">下一步</button>
+        </div>
+        <ol class="step-list" id="stepList"></ol>
+      </div>
+
+      <div class="mode-view hidden" id="viewGlossary">
+        <input class="term-search" id="termSearch" type="search" placeholder="搜索缩写或全称，例如 LSK / 航路">
+        <div class="term-list" id="termList"></div>
+      </div>
+    </aside>
+  </main>
+
+  <div class="toast" id="toast"></div>
+</div>
+
+<script src="glossary.js?v=13"></script>
+<script src="tutorial.js?v=13"></script>
+<script src="pages.js?v=13"></script>
+<script src="app.js?v=13"></script>
+</body>
+</html>
